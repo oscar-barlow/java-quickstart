@@ -18,7 +18,7 @@ But first, let's talk about working with an IDE (IntelliJ).
 
 ### Working with an IDE
 
-While it is *possible* to write Java using vim, or a text editor like Atom, it's not very much fun. If you want to know more about this, maybe skip ahead a little and have a go so you can see what I'm talking about, I'd suggest reading [TDD in Java with JUnit  Without Using an IDE](https://medium.com/@pelensky/java-tdd-with-junit-without-using-an-ide-cd24d38adff).
+While it is *possible* to write Java using vim, or a text editor like Atom, it's not very much fun*.
 
 Most Java developers use an IDE, an Integrated Development Environment. If you haven't already, I'd suggest getting a 3-month trial of IntelliJ through Tim Buchalka's udemy course, as linked in the intro.
 
@@ -47,7 +47,34 @@ A lot of these Java-related terms are probably pretty unfamiliar to you! I sugge
 * Java Compiler
 * Java Virtual Machine
 * Java Runtime Environment
+* The 'heap'
+* Garbage collection
 
+## Static Typing
+In Ruby and in Javascript, you can assign pretty much anything you want to a variable, and then reassign the value of the variable to something completely different. For example, the following is valid (if odd!) Javascript:
 
+```javascript
+var a = "a string";
+var a = 1;
+var a = true;
+var a = { type: "string", value: "what I just wrote" }
+```
+This will not work in Java. When you define a variable in Java, you also define its **type** (a class or **primitive** name).
+
+Imagine you're working on a project with a class called `Dog`. If you wanted to store a `Dog` object in a variable, you'd do something like the following:
+
+```java
+Dog fido = new Dog();
+```
+
+There, at the beginning of the line, you set the type of variable `fido` to `Dog`. You can assign any `Dog` object to fido, but it must be a `Dog`. If you tried to do something like the following:
+
+```java
+Dog fido = new Octopus();
+```
+
+Your code would not compile. It is possible to force one type of object to become another with **casting**, but it's generally not a very good  idea - if you want to know more about this, research casting a double to an integer.
 
 Challenge: codewars
+
+* If you want to know more about this, I'd suggest reading [TDD in Java with JUnit  Without Using an IDE](https://medium.com/@pelensky/java-tdd-with-junit-without-using-an-ide-cd24d38adff).
