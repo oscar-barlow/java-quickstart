@@ -27,9 +27,26 @@ In general, an IDE just makes it more convenient for you to write Java, by doing
 * making it easier to navigate around your code
 * helping manage your dependencies
 * maintaining a large library of plugins (check out [my favourite](https://plugins.jetbrains.com/plugin/8575-nyan-progress-bar))
+* flagging errors or things that your code that could be improved
+* Suggesting methods to you and showing you what parameters they take
 
 I strongly suggest you download IntelliJ for your machine, and use it through the rest of this course. 
 
+## Compilation
+
+Java is a **compiled** language. When you're done working on your code, to actually get it to do anything, you need to run it through the Java Compiler. This produces **bytecode** - code in a format that is less easy for humans to read, but more easy for machines to understand. Any device that can run the version of Java you coded in, can run your bytecode.
+
+The Java Virtual Machine is what runs your bytecode, either interpreting it or just-in-time compiling it to **machine code**.
+
+If your code has errors in it that mean that it can't be compiled, IntelliJ will refuse to 
+
+### Mini-Challenge
+A lot of these Java-related terms are probably pretty unfamiliar to you! I suggest you stop here for a moment and take a moment to write one-sentence definitions of, at minimum, the:
+
+* Java Development Kit (JDK)
+* Java Compiler
+* Java Virtual Machine
+* Java Runtime Environment
 
 
 
