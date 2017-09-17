@@ -1,7 +1,7 @@
 # Java Basics
 
 ## Introduction
-The goal of this section is to introduce you to some features of Java which, if you've only used Ruby or JavaScript before, you probably aren't familiar with, as neither of those languages contain them. 
+The goal of this section is to introduce you to some of the features of Java, for you to use as a basis for further self-directed learning.
 
 In brief, these are:
 
@@ -12,7 +12,7 @@ In brief, these are:
 * Streams
 * Throwing and catching exceptions
 
-There's also a challenge for you to achieve by the end of the week, to help you consolidate your knowledge.
+There's also a challenge to help you consolidate your knowledge.
 
 But first, let's talk about working with an IDE (IntelliJ).
 
@@ -20,9 +20,7 @@ But first, let's talk about working with an IDE (IntelliJ).
 
 While it is *possible* to write Java using vim, or a text editor like Atom, it's not very much fun*.
 
-Most Java developers use an IDE, an Integrated Development Environment. If you haven't already, I'd suggest getting a 3-month trial of IntelliJ through Tim Buchalka's udemy course, as linked in the intro.
-
-In general, an IDE just makes it more convenient for you to write Java, by doing the following:
+Most Java developers use an IDE, an Integrated Development Environment. An IDE makes it more convenient for you to write Java, by doing the following:
 
 * making it easier to navigate around your code
 * helping manage your dependencies
@@ -55,9 +53,9 @@ In Ruby and in Javascript, you can assign pretty much anything you want to a var
 
 ```javascript
 var a = "a string";
-var a = 1;
-var a = true;
-var a = { type: "string", value: "what I just wrote" }
+a = 1;
+a = true;
+a = { type: "string", value: "what I just wrote" }
 ```
 This will not work in Java. When you define a variable in Java, you also define its **type** (a class or **primitive** name).
 
@@ -73,7 +71,13 @@ There, at the beginning of the line, you set the type of variable `fido` to `Dog
 Dog fido = new Octopus();
 ```
 
-Your code would not compile. It is possible to force one type of object to become another with **casting**, but it's generally not a very good  idea - if you want to know more about this, research casting a double to an integer.
+Your code would not compile. It is possible to force one type of object to become another with **casting**, but it's probably not a very good idea - if you want to know more about this, research casting a double to an integer.
+
+Additionally, arrays may only contain objects of one type. A `String[]` is an array that may only contain `String`s, a `Dog[]` may only contain `Dog`s, and so on.  
+
+## Java's Data Structures
+
+Java has many data structures. While the difference between an `ArrayList` and a `LinkedList` may seem trivial at first, using them correctly will make your code easier to write and change, and probably also make your application run faster.  
 
 Challenge: codewars
 
