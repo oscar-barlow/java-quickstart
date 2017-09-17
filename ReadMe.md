@@ -8,7 +8,7 @@
 
 ## Chapters
 
-### 1. Intro
+### 1. Java Basics
 * key differences in java:
 - statically typed
 - many more data structures
