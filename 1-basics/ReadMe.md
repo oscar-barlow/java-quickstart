@@ -1,10 +1,9 @@
 # Java Basics
 
 ## Introduction
-The goal of this section is to introduce you to some of the features of Java, for you to use as a basis for further self-directed learning.
+The goal of this section is to introduce you to some of Java's features, for you to use as a basis for further self-directed learning.
 
 In brief, these are:
-
 * Compilation
 * Static typing
 * Java's data structures
@@ -14,13 +13,13 @@ In brief, these are:
 
 There's also a challenge to help you consolidate your knowledge.
 
-But first, let's talk about working with an IDE (IntelliJ).
+But first, let's talk about working with an Integrated Development Environment (IDE).
 
 ### Working with an IDE
 
 While it is *possible* to write Java using vim, or a text editor like Atom, it's not very much fun*.
 
-Most Java developers use an IDE, an Integrated Development Environment. An IDE makes it more convenient for you to write Java, by doing the following:
+Most Java developers use an IDE. An IDE makes it more convenient for you to write Java, by doing the following:
 
 * making it easier to navigate around your code
 * helping manage your dependencies
@@ -28,7 +27,7 @@ Most Java developers use an IDE, an Integrated Development Environment. An IDE m
 * flagging errors or things that your code that could be improved
 * Suggesting methods to you and showing you what parameters they take
 
-I strongly suggest you download IntelliJ for your machine, and use it through the rest of this course. 
+I strongly suggest you download IntelliJ IDEA to your machine, and use it through the rest of this course.
 
 ## Compilation
 
@@ -36,7 +35,7 @@ Java is a **compiled** language. When you're done working on your code, to actua
 
 The Java Virtual Machine is what runs your bytecode, either interpreting it or just-in-time compiling it to **machine code**.
 
-If your code has errors in it that mean that it can't be compiled, IntelliJ will refuse to 
+If your code has errors in it that mean that it can't be compiled, IntelliJ will refuse to compile it and highlight the problematic parts of your code to you.
 
 ### Mini-Challenge
 A lot of these Java-related terms are probably pretty unfamiliar to you! I suggest you stop here for a moment and take a moment to write one-sentence definitions of, at minimum, the:
@@ -48,7 +47,7 @@ A lot of these Java-related terms are probably pretty unfamiliar to you! I sugge
 * The 'heap'
 * Garbage collection
 
-## Static Typing
+## Static Types
 In Ruby and in Javascript, you can assign pretty much anything you want to a variable, and then reassign the value of the variable to something completely different. For example, the following is valid (if odd!) Javascript:
 
 ```javascript
@@ -65,7 +64,35 @@ Imagine you're working on a project with a class called `Dog`. If you wanted to 
 Dog fido = new Dog();
 ```
 
-There, at the beginning of the line, you set the type of variable `fido` to `Dog`. You can assign any `Dog` object to fido, but it must be a `Dog`. If you tried to do something like the following:
+There, at the beginning of the line, you set the type of variable `fido` to `Dog`. You can assign any `Dog` object to fido, but it must be a `Dog`. Additionally, Java requires you to define what type of object will be returned by a method, e.g.
+
+```java
+public class Dog {
+
+  private String name;
+
+  public String getName() {
+    return this.name;
+  }
+
+}
+```
+
+And to define what kind of object you are giving to your methods, e.g.:
+
+```java
+public class Dog {
+
+  private int age;
+
+  public void setAge(int age) {
+    this.age = age;
+  }
+
+}
+```
+
+But if you tried to do something like the following:
 
 ```java
 Dog fido = new Octopus();
@@ -73,7 +100,7 @@ Dog fido = new Octopus();
 
 Your code would not compile. It is possible to force one type of object to become another with **casting**, but it's probably not a very good idea - if you want to know more about this, research casting a double to an integer.
 
-Additionally, arrays may only contain objects of one type. A `String[]` is an array that may only contain `String`s, a `Dog[]` may only contain `Dog`s, and so on.  
+Additionally, arrays may only contain objects of one type. A `String[]` is an array that may only contain `String`s, a `Dog[]` may only contain `Dog`s, and so on.
 
 ## Java's Data Structures
 
@@ -81,4 +108,4 @@ Java has many data structures. While the difference between an `ArrayList` and a
 
 Challenge: codewars
 
-* If you want to know more about this, I'd suggest reading [TDD in Java with JUnit  Without Using an IDE](https://medium.com/@pelensky/java-tdd-with-junit-without-using-an-ide-cd24d38adff).
+* If you want to know more about this, I'd suggest reading [TDD in Java with JUnit  Without Using an IDE](https://medium.com/@pelensky/java-tdd-with-junit-without-using-an-ide-cd24d38adff)
