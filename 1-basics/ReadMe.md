@@ -102,10 +102,28 @@ Your code would not compile. It is possible to force one type of object to becom
 
 Additionally, arrays may only contain objects of one type. A `String[]` is an array that may only contain `String`s, a `Dog[]` may only contain `Dog`s, and so on.
 
+### Mini-challenge
+Why does anyone bother with static typing? Doesn't it just tie your hands? 
+
+Do some research and find out.
+
 ## Java's Data Structures
 
-Java has many data structures. While the difference between an `ArrayList` and a `LinkedList` may seem trivial at first, using them correctly will make your code easier to write and change, and probably also make your application run faster.  
+Java has data structures that neither Ruby nor Javascript have, like `Set`s. Addtionally, many of these classes are abstract and can't or shouldn't be instantiated directly.
+
+You will probably come across the correct uses of each subclass in your career, and they are too numerous to be worthe time to describe here. For the moment, simply be aware that they exist, and they are meaningfully different from each other. In fact...
+
+### Mini-challenge
+
+What is the difference between an `Array`, an `ArrayList` and a `LinkedList`? Why might you use each one?
+
+## Interfaces
+
+concept of a 'contract'
+allows you to easily switch implementations
+solve multiple inheritance
+
 
 Challenge: codewars
 
-* If you want to know more about this, I'd suggest reading [TDD in Java with JUnit  Without Using an IDE](https://medium.com/@pelensky/java-tdd-with-junit-without-using-an-ide-cd24d38adff)
+* If you want to know more about this, I'd suggest reading [TDD in Java with JUnit Without Using an IDE](https://medium.com/@pelensky/java-tdd-with-junit-without-using-an-ide-cd24d38adff)
