@@ -225,7 +225,7 @@ All well and good, right? Well what if we need to make a change? Specifically in
 We can do that pretty simply:
 
 ```java
-public S3FileExportService implements FileExportOperation {
+public class S3FileExportService implements FileExportOperation {
 
   @Override
   public void export() {
