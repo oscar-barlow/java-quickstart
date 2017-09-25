@@ -195,12 +195,53 @@ public class FileExporter {
 }
 ```
 
+In this case, the our `FileExporter` class contains an interface called `FileExportOperation`, which looks like this:
+
+```java
+public interface FileExportOperation {
+
+  void export();
+
+}
+``` 
 
 
-concept of a 'contract'
-allows you to easily switch implementations
-solve multiple inheritance
+Let's define the class that will actually do the work of the exporting - that will implement the `FileExportOperation` interface:
 
+
+```java
+public class SftpFileExportService implements FileExportOperation {
+
+  @Override
+  public void export() {
+    // do some things that export a file to SFTP here
+  }
+
+}
+```
+
+All well and good, right? Well what if we need to make a change? Specifically in this case, what if we want to export to something like Amazon S3 rather than SFTP?
+
+We can do that pretty simply:
+
+```java
+public S3FileExportService implements FileExportOperation {
+
+  @Override
+  public void export() {
+    // do some things that export a file to S3 here
+  }
+
+}
+```
+
+Here's the important thing: we might need to change a bit of configuration, but **we don't need to change the `FileExporter` class.** As long as it has something that implements the `FileExportOperation` class inside it, it's happy. 
+
+This is what people mean by contracts - classes that can be relied upon to implement a certain behaviour, allowing you to make changes in your application without worrying that something will break.
+
+Todo:
+1. break out into seprate packages
+2. other items in the table of contents
 
 Challenge: codewars
 
