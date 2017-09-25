@@ -111,11 +111,11 @@ Do some research and find out.
 
 Java has data structures that neither Ruby nor Javascript have, like `Set`s. Addtionally, many of these classes are abstract and can't or shouldn't be instantiated directly.
 
-You will probably come across the correct uses of each subclass in your career, and they are too numerous to be worthe time to describe here. For the moment, simply be aware that they exist, and they are meaningfully different from each other. In fact...
+The subclasses of these structures (e.g. `HashMap`, `TreeSet`, `RoleList`) are too numerous to be worth the time to describe here. In general, it is probably better to learn about them in context - in the course of your job, when you need to use them. For the moment, simply be aware that they exist, and they are meaningfully different from each other. In fact...
 
 ### Mini-challenge
 
-What is the difference between an `Array`, an `ArrayList` and a `LinkedList`? Why might you use each one?
+Mostly, you'll learn about using Java's data structures in the course of your work. However, to give you a taste of how the subclasses can be different from each other - what is the difference between an `Array`, an `ArrayList` and a `LinkedList`? Why might you use each one?
 
 ## Interfaces
 
