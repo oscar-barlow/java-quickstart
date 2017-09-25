@@ -119,6 +119,84 @@ Mostly, you'll learn about using Java's data structures in the course of your wo
 
 ## Interfaces
 
+You are probably already familiar with the concept of polymorphism from Ruby and Javascript. Classes may inherit from a super-class in Java, just like in those languages. Where Java differs is in the ability to:
+
+1. Make the super-class abstract, i.e. impossible to instantiate; and
+2. With the use of interfaces.
+
+Of those, (1) is hopefully pretty self-explanatory. (2) however requires a little more information to understand.
+
+If you google something like "what is an interface java," sooner or later you will find an explanation along the lines of: _Interfaces in Java represent a 'contract' between different parts of your application_. Personally speaking, I did not find this terribly helpful, as a beginner - although I will say, it does eventually make sense!
+
+Let's define an interface:
+
+```java
+public interface Mammal {
+
+  String makeNoise();
+
+}
+```
+
+And then slightly modify the `Dog` class we introduced earlier, so that it 'implements' the `Mamal` interface:
+
+```java
+public class Dog implements Mammal {
+
+  @Override
+  public String makeNoise() {
+    return "Woof!";
+  } 
+
+}
+``` 
+
+You'll see that the `Mammal` interface contains a single method without implementation details, and the `Dog` class contains a method by the same name (annotated with `@Override`), this time with implementation details. On a very basic level, this is how interfaces work: you define methods in them, and any class that you want to implement the interface *must* define those methods. They can implement those methods in very different ways, however; in fact, as we'll see, this is rather the point.
+
+ Let's define another class, `Cat`:
+
+```java
+public class Cat implements Mammal {
+
+  @Override
+  public String makeNoise() {
+    return "Miaow!"
+  }
+
+}
+```
+
+What does this get us? Well, now that we have two classes that implement `Mammal`, we could so something like the following:
+
+```java
+  Dog fido = new Dog();
+  Cat paws = new Cat();
+
+  Mammal[] mammals = new Mammal[]{fido, paws};
+
+  for (Mammal mammal : mammals) {
+    mammal.makeNoise();
+  }
+```
+
+The syntax may be a little unfamiliar - but hopefully you can see what the above loop does! The key is this: because both `Dog` and `Cat` implement the `Mammal` interface, **we can rely on both of them to have the same behaviour.**
+
+OK, but why in the real world would we do this? Well, let's imagine we're working on a web application, and we want and as part of that we want to export some files. We'll do this with a class called `FileExporter`:
+
+```java
+public class FileExporter {
+
+  private final FileExportOperation fileExportOperation;
+
+  public void export() {
+    fileExportOperation.export();
+  }
+
+}
+```
+
+
+
 concept of a 'contract'
 allows you to easily switch implementations
 solve multiple inheritance
