@@ -92,7 +92,7 @@ public class Dog {
 }
 ```
 
-But if you tried to do something like the following:
+However, if you tried to do something like the following:
 
 ```java
 Dog fido = new Octopus();
@@ -119,14 +119,7 @@ Mostly, you'll learn about using Java's data structures in the course of your wo
 
 ## Interfaces
 
-You are probably already familiar with the concept of polymorphism from Ruby and Javascript. Classes may inherit from a super-class in Java, just like in those languages. Where Java differs is in the ability to:
-
-1. Make the super-class abstract, i.e. impossible to instantiate; and
-2. With the use of interfaces.
-
-Of those, (1) is hopefully pretty self-explanatory. (2) however requires a little more information to understand.
-
-If you google something like "what is an interface java," sooner or later you will find an explanation along the lines of: _Interfaces in Java represent a 'contract' between different parts of your application_. Personally speaking, I did not find this terribly helpful, as a beginner - although I will say, it does eventually make sense!
+If you Google something like "what is an interface java," sooner or later you will find an explanation along the lines of: _Interfaces in Java represent a 'contract' between different parts of your application_. Personally speaking, I did not find this terribly helpful, as a beginner - although it does eventually make sense!
 
 Let's define an interface:
 
@@ -138,7 +131,7 @@ public interface Mammal {
 }
 ```
 
-And then slightly modify the `Dog` class we introduced earlier, so that it 'implements' the `Mamal` interface:
+And then slightly modify the `Dog` class we introduced earlier, so that it 'implements' the `Mammal` interface:
 
 ```java
 public class Dog implements Mammal {
@@ -151,7 +144,7 @@ public class Dog implements Mammal {
 }
 ``` 
 
-You'll see that the `Mammal` interface contains a single method without implementation details, and the `Dog` class contains a method by the same name (annotated with `@Override`), this time with implementation details. On a very basic level, this is how interfaces work: you define methods in them, and any class that you want to implement the interface *must* define those methods. They can implement those methods in very different ways, however; in fact, as we'll see, this is rather the point.
+You'll see that the `Mammal` interface contains a single method without implementation details, and the `Dog` class contains a method by the same name (annotated with `@Override`), this time with implementation details. On a very basic level, this is how interfaces work: you define methods in them, and any class that you want to implement the interface *must* define those methods. They can implement those methods in very different ways, however; in fact, as we'll see, this is part of the point.
 
  Let's define another class, `Cat`:
 
@@ -181,7 +174,7 @@ What does this get us? Well, now that we have two classes that implement `Mammal
 
 The syntax may be a little unfamiliar - but hopefully you can see what the above loop does! The key is this: because both `Dog` and `Cat` implement the `Mammal` interface, **we can rely on both of them to have the same behaviour.**
 
-OK, but why in the real world would we do this? Well, let's imagine we're working on a web application, and we want and as part of that we want to export some files. We'll do this with a class called `FileExporter`:
+OK, but why in the real world would we do this? Well, let's imagine we're working on a web application, and as part of that we want to export some files. We'll do this with a class called `FileExporter`:
 
 ```java
 public class FileExporter {
@@ -195,7 +188,7 @@ public class FileExporter {
 }
 ```
 
-In this case, the our `FileExporter` class contains an interface called `FileExportOperation`, which looks like this:
+In this case, the our `FileExporter` class contains an interface called `FileExportOperation`. In the real world we would configure our application to automatically inject a class which implements `FileExportOperation` into the `FileExporter`. We'll cover this in a later chapter - in the meantime, let's look at the interface:
 
 ```java
 public interface FileExportOperation {
@@ -205,9 +198,7 @@ public interface FileExportOperation {
 }
 ``` 
 
-
 Let's define the class that will actually do the work of the exporting - that will implement the `FileExportOperation` interface:
-
 
 ```java
 public class SftpFileExportService implements FileExportOperation {
@@ -220,9 +211,9 @@ public class SftpFileExportService implements FileExportOperation {
 }
 ```
 
-All well and good, right? Well what if we need to make a change? Specifically in this case, what if we want to export to something like Amazon S3 rather than SFTP?
+All well and good, right? Well what if we need to make a change? Specifically in this case, what if we want to export to Amazon S3 rather than SFTP?
 
-We can do that pretty simply:
+We can do that pretty easily:
 
 ```java
 public class S3FileExportService implements FileExportOperation {
