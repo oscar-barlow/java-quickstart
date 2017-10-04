@@ -1,4 +1,4 @@
-# 1.3 Streams
+# 1.3 Functional Programming in Java: Streams and Optionals
 
 ## Introduction
 
