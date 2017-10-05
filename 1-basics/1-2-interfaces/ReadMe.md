@@ -36,7 +36,7 @@ public class Cat implements Mammal {
 
   @Override
   public String makeNoise() {
-    return "Miaow!"
+    return "Miaow!";
   }
 
 }
@@ -112,3 +112,8 @@ public class S3FileExportService implements FileExportOperation {
 Here's the important thing: we might need to change a bit of configuration, but **we don't need to change the `FileExporter` class.** As long as it has something that implements the `FileExportOperation` class inside it, it's happy.
 
 This is what people mean by contracts - classes that can be relied upon to implement a certain behaviour, allowing you to make changes in your application without worrying that something will break.
+
+## Mini-challenge
+Open this folder up in IntelliJ, and you'll find some working code that demonstrates the above use of interfaces.
+
+Make your own implementation of the `FileExportOperation` interface and switch it into the code. You shouldn't need to change very much in the `FileExporter` class to do this.
