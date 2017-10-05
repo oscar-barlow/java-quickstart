@@ -8,7 +8,7 @@
 
 ## Chapters
 
-### 1. Java Basics
+### [1. Java Basics](https://github.com/oscar-barlow/java-quickstart/tree/master/1-basics)
 * key differences in java:
 - statically typed
 - many more data structures
