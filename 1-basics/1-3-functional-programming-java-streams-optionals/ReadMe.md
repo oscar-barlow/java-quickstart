@@ -14,3 +14,8 @@
 
 
 * examples: foreach, primitive streams, filtering, mapping, summing
+
+## Resources:
+
+* http://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
+* https://en.wikipedia.org/wiki/Monad_%28functional_programming%29
