@@ -4,7 +4,7 @@
 
 This section covers two elements of Java that are frankly unintuitive for someone who's done a Ruby/Javascript bootcamp:
 
-1. Streams
+1. [Streams](https://github.com/oscar-barlow/java-quickstart/tree/master/1-basics/1-3-functional-programming-java-streams-optionals/1-3-1-streams)
 2. Optionals
 
 Both are widely used in Java development, and both are elements of *functional programming* in Java, which is why I've grouped them together.
