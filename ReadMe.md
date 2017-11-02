@@ -26,11 +26,12 @@ Dealing with dbs is omitted.
 
 Challenge: codewars
  
-### 2. Testing
+### 2. Testing & Exceptions
 
 * Testing is split between a runner, and an assertions library
 * Will run with JUnit, but use AssertJ's assertions
 * For mocking and stubbing, will use Mockito
+* Exceptions - testing, and checked vs unchecked
 
 * examples
 
