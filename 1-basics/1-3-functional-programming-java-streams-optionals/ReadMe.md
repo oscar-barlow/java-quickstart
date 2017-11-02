@@ -2,21 +2,14 @@
 
 ## Introduction
 
-* Noticed that some common operations in Ruby or JS e.g. selecting, mapping,
-  etc are not as simple in Java.
-* To do this, you need to use a stream
-* What is a stream? Well, there are a lot of not terribly helpful definitions
-  out there. For the time being, a stream is something that you can transform
-  anything that implements the Collection interface into, and which then
-  filter, map, etc
-* On a more techincal level, streams add functional programming to java, and
-    they are monads (good for a mini challenge)
+This section covers two elements of Java that are frankly unintuitive for someone who's done a Ruby/Javascript bootcamp:
 
+1. Streams
+2. Optionals
 
-* examples: foreach, primitive streams, filtering, mapping, summing
+Both are widely used in Java development, and both are elements of *functional programming* in Java, which is why I've grouped them together.
 
-## Resources:
+For this section, I've extensively referred to/borrowed from this blog post: [Java 8 Stream Tutorial](http://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/) by [Benjamin Winterberg](http://winterbe.com/). You may like to read it also.
 
-* http://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
-* https://en.wikipedia.org/wiki/Monad_%28functional_programming%29
-* https://dzone.com/articles/whats-wrong-java-8-part-iv
+### Mini-challenge
+What is functional programming? Write a quick defintion for yourself. Don't spend too much time on this. 
