@@ -1,63 +1,57 @@
-# Java Quickstart - Introduction
+```
 
-* oriented to people who have completed a web development bootcamp
-* enables you to start learning on the job
-* should take about 4 weeks to complete
+     __                         ____          _         __         __               __ 
+ __ / / ___ _ _  __ ___ _      / __ \ __ __  (_) ____  / /__  ___ / /_ ___ _  ____ / /_
+/ // / / _ `/| |/ // _ `/     / /_/ // // / / / / __/ /  '_/ (_-</ __// _ `/ / __// __/
+\___/  \_,_/ |___/ \_,_/      \___\_\\_,_/ /_/  \__/ /_/\_\ /___/\__/ \_,_/ /_/   \__/ 
+                                                                                       
 
-* get Tim Buchalka's udemy course
+```
+# Introduction
+Welcome to Java Quickstart! This is a course aimed at **coding bootcamp developers** who want to come up to speed with Java quickly. It should take about 4 weeks to complete. By completing this course, you should be able to show up on day 1 of your new job as a Junior Java Developer with enough knowledge of Java to continue (and hopefully accellerate) your learning in a hands-on, professional context. 
 
-## Chapters
+# Course Pre-requisites
+The course  makes the assumption that you already have knowledge of a few things:
+
+* Ruby and/or Javascript
+* Object-oriented Programming
+* Test-driven Development
+* Model/View/Controller 
+
+Additionally, this course is envisaged as a **supplement** to the learning that you should already be doing, as a bootcamp grad who wants to learn Java: Googling, reading StackOverflow, playing around with code samples, going on codewars, taking udemy courses, and so on. On this point, I'd like to recommend Tim Buchalka's [Complete Java Masterclass](https://www.udemy.com/java-the-complete-java-developer-course/learn/v4/overview) udemy course. Tim gives a very thorough introduction to Java, from the ground up, and in doing so has saved a lot of space in this course! Additionally, by buying Tim's course you can get a 90 trial license for IntelliJ IDEA, an industry-standard Java Integrated Development Environment. 
+
+# Course Content
+The course has four chapterschapterschapterschapterschapterschapterschapterschapterschapters, as described below. It is envisaged that it will take about one week to complete each section - though naturally you may go through it at any speed you like.
+
+Please note that **working with databases in Java is not covered by this course**. This would be a complex subject all by itself - and may merit a separate course in future.
+
+Each chapter contains a `ReadMe` with links to any sub-sections. Every chapter also contains at least one code sample, which you are encouraged to open in IntelliJ IDEA and fiddle around with, so that you can explore the concepts the course introduces in a hands-on way. Finally for now, each chapter contains several 'mini-challenges' and one major challenge. Once again, the emphasis is by learning by doing - complete these tasks to get the most out of this course. 
+
+## Table of Contents
 
 ### [1. Basics](https://github.com/oscar-barlow/java-quickstart/tree/master/1-basics)
-* key differences in java:
-- statically typed
-- many more data structures
-- interfaces
-- IDE
-- exceptions
-- ecosystem of libraries is different
-
-Tour of java features -
-
-* Streams
-* Static typing
-
-Dealing with dbs is omitted.
+* Compilation, static typing, and Java data-structures
+* Interfaces
+* Functional programming in Java: Streams and Optionals
 
 Challenge: codewars
  
-### 2. Testing, Build Tools, and Exceptions
+### [2. Testing, Build Tools, and Exceptions](https://github.com/oscar-barlow/java-quickstart/tree/master/2-testing-buildtools-exceptions)
+* Build Tools: Maven and Gradle
+* Mockito: testing, mocking, stubbing and spying
+* Handling and testing exceptions
 
-* Testing is split between a runner, and an assertions library
-* Will run with JUnit, but use AssertJ's assertions
-* For mocking and stubbing, will use Mockito
-* Exceptions - testing, and checked vs unchecked
+Challenge: Airport
 
-* examples
+### 3. [Common Libraries: Lombok and Jackson](https://github.com/oscar-barlow/java-quickstart/tree/master/3-jackson-lombok)
 
-- static imports - question...
+### [4. Spring Boot](https://github.com/oscar-barlow/java-quickstart/tree/master/4-spring-boot)
 
-* Testing an exception
+# Contributing
+Pull requests welcome :)
 
-Challenge: Airport in Java. Recap brief.
+# Authors
+[Oscar Barlow](https://github.com/oscar-barlow).
 
-### 3. Jackson & Lombok
-
-* Huge libraries! Jackson is very useful for serialization and de-serialization into Java objects
-* Means you don't have to muck around with JSON
-
-* Lombok adds some convient shortcuts for us.
-
-* Together they allow convenient DTOs
-
-Challenge: get and map over some public data, making an array of dtos
-
-### 4. Spring
-
-* This is a big one. The Spring Framework is huge. 
-* Major concept to get your head around is Dependency Injection.
-* Additionally, splitting out the service layer
-
-Challenge: battle
-
-Challenge
+# License
+Creative Commons [Attribution-NonCommercial 4.0 International](http://creativecommons.org/licenses/by-nc/4.0/)
