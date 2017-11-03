@@ -4,7 +4,8 @@
 
 If you Google something like "what is an interface java," sooner or later you will find an explanation along the lines of: _Interfaces in Java represent a 'contract' between different parts of your application_. Personally speaking, I did not find this terribly helpful, as a beginner - although it does eventually make sense!
 
-Let's define an interface:
+## How is it a contract?
+Let's write an interface:
 
 ```java
 public interface Mammal {
