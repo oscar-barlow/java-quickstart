@@ -93,4 +93,6 @@ I'll admit, the example is a little bit contrived! And normally you wouldn't use
 I've chosen to implement Java's `Function` interface in my `CityTransformer`, which is why I don't need to tell the stream which method to call.
 
 ## Conclusion
-It can take a while to get your head around Java streams - this style of coding (functional) is noticeably different to the object-oriented style you may be used to. But they are extremely important to master. I encourage you to play around with the examples I've provided to get a little more comfortable.      
+It can take a while to get your head around Java streams - this style of coding (functional) is noticeably different to the object-oriented style you may be used to. 
+
+But they are extremely useful, and important to master. I encourage you to play around with the examples I've provided to get a little more comfortable.      
