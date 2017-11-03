@@ -43,7 +43,7 @@ Challenge: codewars
 
 Challenge: Airport
 
-### 3. [Common Libraries: Lombok and Jackson](https://github.com/oscar-barlow/java-quickstart/tree/master/3-jackson-lombok)
+### [3. Common Libraries: Lombok and Jackson](https://github.com/oscar-barlow/java-quickstart/tree/master/3-jackson-lombok)
 
 ### [4. Spring Boot](https://github.com/oscar-barlow/java-quickstart/tree/master/4-spring-boot)
 
