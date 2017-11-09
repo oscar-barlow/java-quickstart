@@ -40,6 +40,8 @@ Check out [this blog post](https://medium.com/@bherbst/understanding-the-gradle-
 
 
 ### Mini-challenge
-Install the [time4j calendar](https://mvnrepository.com/artifact/net.time4j/time4j-calendar) library and build a class that converts today's into the French Revolutionary calendar format. You will probably need to use the `axis()` method.
+Install the [time4j calendar](https://mvnrepository.com/artifact/net.time4j/time4j-calendar) library and build a class that converts today's date into the French Revolutionary calendar format. You will probably need to use the `axis()` method.
 
-You may need to refresh the Gradle project if you have not enabled auto-import. If you want to poke around the time4j calendar package, expand the 'External Libraries' section in IntelliJ.  
+You may need to refresh the Gradle project if you have not enabled auto-import. If you want to poke around the time4j calendar package to see how its classes work, expand the 'External Libraries' section in IntelliJ.
+
+Vive la révolution!
