@@ -48,7 +48,7 @@ public class BikeShopTest {
   }
 
   @Test
-  public void shouldRepairBikes() throws Exception {
+  public void shouldRepairBrokenBikes() throws Exception {
     Bike bike3 = Mockito.mock(Bike.class);
     Mockito.when(bike3.isWorking()).thenReturn(false);
     underTest.addBike(bike3);
@@ -56,5 +56,7 @@ public class BikeShopTest {
     underTest.repairBikes();
 
     Mockito.verify(bike3).repair();
+    Mockito.verify(bike2, Mockito.never()).repair();
+    Mockito.verify(bike1, Mockito.never()).repair();
   }
 }

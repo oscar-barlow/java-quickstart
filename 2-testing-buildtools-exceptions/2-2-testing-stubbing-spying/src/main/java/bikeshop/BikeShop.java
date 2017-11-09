@@ -24,6 +24,8 @@ public class BikeShop {
   }
 
   public void repairBikes() {
-    getBikes().forEach(Bike::repair);
+    getBikes().stream()
+        .filter(Bike::isBroken)
+        .forEach(Bike::repair);
   }
 }

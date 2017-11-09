@@ -9,7 +9,11 @@ public class Bike {
   }
 
   public boolean isWorking() {
-    return working;
+    return working == true;
+  }
+
+  public boolean isBroken() {
+    return working == false;
   }
 
   public void repair() {
