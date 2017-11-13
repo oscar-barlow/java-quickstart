@@ -9,7 +9,7 @@ Bundler allows you to install dependencies. You can manage your dependencies wit
 [Maven](https://maven.apache.org/) and [Gradle](https://gradle.org/) are similar to npm and yarn in that respect - they allow you to install and manage dependencies, and to define and execute custom tasks. As such, they are described as build tools rather than package managers.
 
 ## Using Gradle
-This course focuses on Gradle in preference to Maven. There are a couple of reasons for this: firstly, Gradle is a little bit smarter in how it manages dependencies, and how it builds your project. Secondly and more importantly though, Gradle uses a Groovy-based DSL; whereas Maven uses XML, and it's *horrible*.
+This course focuses on Gradle in preference to Maven. There are a couple of reasons for this: firstly, Gradle is a little bit smarter in how it manages dependencies, and how it builds your project. Secondly and more importantly though, Gradle uses a [Groovy](http://groovy-lang.org/)-based DSL; whereas Maven uses XML, and it's *horrible*.
 
 As a general rule in fact, if you're dealing with XML, you're probably dealing with a rather old plugin or library. XML has rather fallen out of favour in the Java community.     
 
