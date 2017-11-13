@@ -8,7 +8,8 @@
 
 ```
 # Introduction
-Welcome to Java Quickstart! This is a course aimed at **coding bootcamp developers** who want to come up to speed with Java quickly. It should take about 4 weeks to complete. By completing this course, you should be able to show up on day 1 of your new job as a Junior Java Developer with enough knowledge of Java to continue (and hopefully accellerate) your learning in a hands-on, professional context. 
+Welcome to Java Quickstart! This is a course aimed at **coding bootcamp developers** who want to come up to speed with Java quickly. 
+It should take about 4 weeks to complete. By completing this course, you should be able to show up on day 1 of your new job as a Junior Java Developer with enough knowledge of Java to continue (and hopefully accellerate) your learning in a hands-on, professional context. 
 
 # Course Pre-requisites
 The course  makes the assumption that you already have knowledge of a few things:
@@ -21,7 +22,7 @@ The course  makes the assumption that you already have knowledge of a few things
 Additionally, this course is envisaged as a **supplement** to the learning that you should already be doing, as a bootcamp grad who wants to learn Java: Googling, reading StackOverflow, playing around with code samples, going on codewars, taking udemy courses, and so on. On this point, I'd like to recommend Tim Buchalka's [Complete Java Masterclass](https://www.udemy.com/java-the-complete-java-developer-course/learn/v4/overview) udemy course. Tim gives a very thorough introduction to Java, from the ground up, and in doing so has saved a lot of space in this course! Additionally, by buying Tim's course you can get a 90 trial license for IntelliJ IDEA, an industry-standard Java Integrated Development Environment. 
 
 # Course Content
-The course has four chapterschapterschapterschapterschapterschapterschapterschapterschapters, as described below. It is envisaged that it will take about one week to complete each section - though naturally you may go through it at any speed you like.
+The course has four chapters, as described below. It is envisaged that it will take about one week to complete each section - though naturally you may go through it at any speed you like.
 
 Please note that **working with databases in Java is not covered by this course**. This would be a complex subject all by itself - and may merit a separate course in future.
 
@@ -43,7 +44,7 @@ Challenge: codewars
 
 Challenge: Airport
 
-### [3. Common Libraries: Lombok and Jackson](https://github.com/oscar-barlow/java-quickstart/tree/master/3-jackson-lombok)
+### [3. Common Libraries: Lombok, Jackson, and Guava](https://github.com/oscar-barlow/java-quickstart/tree/master/3-jackson-lombok)
 
 ### [4. Spring Boot](https://github.com/oscar-barlow/java-quickstart/tree/master/4-spring-boot)
 
