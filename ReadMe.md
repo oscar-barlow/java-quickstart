@@ -40,16 +40,16 @@ Each chapter contains a `ReadMe` with links to any sub-sections. Every chapter a
 
 Challenge: codewars
  
-### [2. Testing, Build Tools, and Exceptions](https://github.com/oscar-barlow/java-quickstart/tree/master/2-testing-buildtools-exceptions)
+### [2. Testing, Build Tools, and Exceptions](2-testing-buildtools-exceptions)
 * Build Tools: Maven and Gradle
 * Mockito: testing, mocking, stubbing and spying
 * Handling and testing exceptions
 
 Challenge: Airport
 
-### [3. Common Libraries: Lombok, Jackson, and Guava](https://github.com/oscar-barlow/java-quickstart/tree/master/3-jackson-lombok)
+### [3. Common Libraries: Lombok, Jackson, and Guava](3-jackson-lombok)
 
-### [4. Spring Boot](https://github.com/oscar-barlow/java-quickstart/tree/master/4-spring-boot)
+### [4. Spring Boot](4-spring-boot)
 
 # Contributing
 Pull requests welcome :)
