@@ -42,7 +42,9 @@ end
 
 In this case, you use pry to pause the execution of your code. You can then check the value of any variables you have access to (i.e. check the program's **state**), and that the methods you're calling are doing what you expect (i.e. checking the program's **behaviour**).
 
-In Java, you can debug using the first method by using `System.out.println(<whatever>)` to find out the state of part of the program, and then try and make inferences about buggy behaviour from that. But you'll often to re-compile the code and boot up the JVM every time you run your application, and that slows your debugging down. So Java developers typically prefer the second method, and use their IDE's built-in debugging features.  
+In Java, you can debug using the first method by using `System.out.println(<whatever>)` to find out the state of part of the program, and then try and make inferences about buggy behaviour from that.
+
+But you'll have to re-compile the code and boot up the JVM every time you run your application, and that slows your debugging down. So Java developers typically prefer the second method, and use their IDE's built-in debugging features.  
 
 Check out the code sample in this section, the `something something` application. Running the application will produce an exception, making it 'blow up' and stop running (the last item in the stack trace should be an exit code, which provides some further information about the error).
 
