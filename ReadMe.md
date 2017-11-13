@@ -9,6 +9,7 @@
 ```
 # Introduction
 Welcome to Java Quickstart! This is a course aimed at **coding bootcamp developers** who want to come up to speed with Java quickly. 
+
 It should take about 4 weeks to complete. By completing this course, you should be able to show up on day 1 of your new job as a Junior Java Developer with enough knowledge of Java to continue (and hopefully accellerate) your learning in a hands-on, professional context. 
 
 # Course Pre-requisites
@@ -19,7 +20,9 @@ The course  makes the assumption that you already have knowledge of a few things
 * Test-driven Development
 * Model/View/Controller 
 
-Additionally, this course is envisaged as a **supplement** to the learning that you should already be doing, as a bootcamp grad who wants to learn Java: Googling, reading StackOverflow, playing around with code samples, going on codewars, taking udemy courses, and so on. On this point, I'd like to recommend Tim Buchalka's [Complete Java Masterclass](https://www.udemy.com/java-the-complete-java-developer-course/learn/v4/overview) udemy course. Tim gives a very thorough introduction to Java, from the ground up, and in doing so has saved a lot of space in this course! Additionally, by buying Tim's course you can get a 90 trial license for IntelliJ IDEA, an industry-standard Java Integrated Development Environment. 
+Additionally, this course is envisaged as a **supplement** to the learning that you should already be doing, as a bootcamp grad who wants to learn Java: Googling, reading StackOverflow, playing around with code samples, going on codewars, taking udemy courses, and so on. 
+
+On this point, I'd like to recommend Tim Buchalka's [Complete Java Masterclass](https://www.udemy.com/java-the-complete-java-developer-course/learn/v4/overview) udemy course. Tim gives a very thorough introduction to Java, from the ground up, and in doing so has saved a lot of space in this course! Additionally, by buying Tim's course you can get a 90-day trial license for IntelliJ IDEA, an industry-standard Integrated Development Environment for Java. 
 
 # Course Content
 The course has four chapters, as described below. It is envisaged that it will take about one week to complete each section - though naturally you may go through it at any speed you like.
@@ -30,7 +33,7 @@ Each chapter contains a `ReadMe` with links to any sub-sections. Every chapter a
 
 ## Table of Contents
 
-### [1. Basics](https://github.com/oscar-barlow/java-quickstart/tree/master/1-basics)
+### [1. Basics](1-basics)
 * Compilation, static typing, and Java data-structures
 * Interfaces
 * Functional programming in Java: Streams and Optionals
