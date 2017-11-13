@@ -29,7 +29,9 @@ The course has four chapters, as described below. It is envisaged that it will t
 
 Please note that **working with databases in Java is not covered by this course**. This would be a complex subject all by itself - and may merit a separate course in future.
 
-Each chapter contains a `ReadMe` with links to any sub-sections. Every chapter also contains at least one code sample, which you are encouraged to open in IntelliJ IDEA and fiddle around with, so that you can explore the concepts the course introduces in a hands-on way. Finally for now, each chapter contains several 'mini-challenges' and one major challenge. Once again, the emphasis is by learning by doing - complete these tasks to get the most out of this course. 
+Each chapter contains a `ReadMe` with links to any sub-sections. Every chapter also contains at least one code sample, which you are encouraged to open in IntelliJ IDEA and fiddle around with, so that you can explore the concepts the course introduces in a hands-on way. 
+
+Finally, each chapter contains several 'mini-challenges' and one major challenge. Once again, the emphasis is by learning by doing - complete these tasks to get the most out of this course. 
 
 ## Table of Contents
 
