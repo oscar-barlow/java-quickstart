@@ -36,16 +36,16 @@ Finally, each chapter contains several 'mini-challenges' and one major challenge
 ## Table of Contents
 
 ### [1. Basics](1-basics)
-* Compilation, static typing, and Java data-structures
+* Compilation, Static Typing, and Java Data-structures
 * Interfaces
-* Functional programming in Java: Streams and Optionals
+* Functional Programming in Java: Streams and Optionals
 
 Challenge: codewars
  
 ### [2. Testing, Build Tools, and Exceptions](2-testing-buildtools-exceptions)
 * Build Tools: Maven and Gradle
-* Mockito: testing, mocking, stubbing and spying
-* Handling and testing exceptions
+* Testing, Mocking, Stubbing and Spying
+* Debugging, and Handling Exceptions 
 
 Challenge: Airport
 
