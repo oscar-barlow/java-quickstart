@@ -8,7 +8,7 @@
 
 ```
 # Introduction
-Welcome to Java Quickstart! This is a course aimed at **coding bootcamp developers** who want to come up to speed with Java quickly. 
+Welcome to Java Quickstart! This is a course aimed at **coding bootcamp graduates** who want to come up to speed with Java quickly. 
 
 It should take about 4 weeks to complete. By completing this course, you should be able to show up on day 1 of your new job as a Junior Java Developer with enough knowledge of Java to continue (and hopefully accellerate) your learning in a hands-on, professional context. 
 
