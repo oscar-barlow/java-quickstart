@@ -1,0 +1,3 @@
+This is some text in a file.
+I decided to split it over several lines.
+Because I thought that would be more interesting!
