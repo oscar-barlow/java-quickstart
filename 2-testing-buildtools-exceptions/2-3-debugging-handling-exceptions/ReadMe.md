@@ -40,22 +40,22 @@ def transmogrify(doohickey)
 end
 ``` 
 
-In this case, you use pry to pause the execution of your code. You can then check the value of any variables you have access to (i.e. see the program's **state**), and that the methods you're calling are doing what you expect (i.e. checking the program's **behaviour**).
+In this case, you use [pry](https://github.com/pry/pry) to pause the execution of your code. You can then check the value of any variables you have access to (i.e. see the program's **state**), and that the methods you're calling are doing what you expect (i.e. checking the program's **behaviour**).
 
-In Java, you can debug using the first method by using `System.out.println(<whatever>)` to find out the state of part of the program, and then try and make inferences about buggy behaviour from that.
+In Java, you can debug using the former method by using `System.out.println(<whatever>)` to find out the state of part of the program, and then try and make inferences about buggy behaviour from that.
 
-But you'll have to re-compile the code and boot up the JVM every time you run your application, and that slows your debugging down. So Java developers typically prefer the second method, and use their IDE's built-in debugging features.  
+But you'll have to re-compile the code and boot up the JVM every time you run your application, and that slows your debugging down. So Java developers typically prefer the latter method, and use their IDE's built-in debugging features.  
 
 Check out `ErrorProneApplication`. Running the application will produce an exception, making it 'blow up' and stop running (the last item in the stack trace should be an exit code, which provides some further information about the error).
 
 Next time you run the application, place a breakpoint on line 11 of the application - where we're trying to get the weather in Paris - and run the application in debug mode. The application's execution will pause, and IntelliJ will show you information about the **state** of the application right there on the screen - in italic text right next to the relevant code. 
 
-At this point you'll see some buttons in the debugger console, that give you several options for how to proceed: 
+At this point you'll see some buttons in the debugger console, that give you several options for how to get information about the application's **behaviour**: 
 * step over: instruction the application to keep executing, line by line
 * step into: go down a level into your application - see the details of what code is being executed by the methods your application is calling
 * resume execution - and maybe hit the next breakdpoint
 
-By pressing `alt + f8` in debug mode you can also enter evaluation mode, where you can try out methods, pass in new variables, and see what happens. In other words, you can get live information about your code's **behaviour**
+By pressing `alt + f8` in debug mode you can also enter evaluation mode, where you can try out methods, pass in new variables, and see what happens.
 
 When your code isn't behaving as expected, IntelliJ is able to give you rich debugging information that can take you to the root cause of the problem extremely quickly.
 
@@ -64,7 +64,7 @@ You're likely to need to use these capabilities in the end-of-chapter challenge,
 ## Two types of exception: Checked and Unchecked
 Exceptions come in two flavours: checked and unchecked. The difference is described [here](http://www.geeksforgeeks.org/checked-vs-unchecked-exceptions-in-java/).
 
-Both types of exceptions should be *handled*. This means that you, the developer, must anticipate what parts of your code might throw exceptions and decide what to do if that happens. With the exception of `RunTimeException`s, if you don't handle an exception, your application will grind to a halt! Notice that, because looking up the weather in Paris throws an exception, the lines after that aren't even executed. Comment out that line and execution will proceed. 
+Both types of exceptions should be *handled*. This means that you, the developer, must anticipate what parts of your code might throw exceptions and decide what to do if that happens. If you don't handle an exception, your application will grind to a halt! Notice that, because looking up the weather in Paris throws an exception, the lines after that aren't even executed. Comment out that line and execution will proceed. 
 
 On the other hand, if you do handle the exception, your application will throw the exception and then continue executing, and you may be able to provide some useful information to the end-user about what went wrong.
 
