@@ -51,7 +51,7 @@ Challenge: codewars
 
 Challenge: Airport
 
-### [3. Common Libraries: Lombok, Jackson, and Guava](3-jackson-lombok)
+### [3. Common Libraries: Lombok, Jackson, and Guava](3-lombok-jackson-guava)
 
 ### [4. Spring Boot](4-spring-boot)
 
