@@ -7,9 +7,8 @@ By the end of this section, you should be able to consume and work with data fro
 
 The libraries covered are:
 
-1. Lombok
-2. Jackson
-3. Guava
+1. [Lombok](3-1-lombok)
+2. [Jackson & Guava](3-2-jackson-guava)
 
 Huge libraries! Jackson is very useful for serialization and de-serialization into Java objects
 
