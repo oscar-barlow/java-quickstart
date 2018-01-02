@@ -9,14 +9,13 @@ This chapter has the following sections:
 2. [Testing, Mocking, Stubbing, and Spying](2-2-testing-stubbing-spying)
 3. [Debugging, and Handling Exceptions](2-3-debugging-handling-exceptions)
 
-## Challengei: Airport
+## Challenge: Airport
 Write and thoroughly test a Java application that satisfies the following user
 stories. Command-line applications in Java are actually quite involved, so
 this challenge can be considered complete when you have a test suite that
 covers the stories below (plus exceptions, etc).
 
-**Bonus**
-
+### Bonus
 Make a command-line interface for your Airport application.
 
 ```
