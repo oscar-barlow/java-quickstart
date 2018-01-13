@@ -19,11 +19,11 @@ public class Question {
     this.incorrect_answers = incorrect_answers;
   }
 
-  private final String category;
-  private final Boolean type;
-  private final String difficulty;
-  private final String question;
-  private final String correct_answer;
-  private final List<String> incorrect_answers;
+  private String category;
+  private Boolean type;
+  private String difficulty;
+  private String question;
+  private String correct_answer;
+  private List<String> incorrect_answers;
 
 }

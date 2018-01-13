@@ -12,6 +12,6 @@ public class Questions {
     this.questions = questions;
   }
 
-  private final List<Question> questions;
+  private List<Question> questions;
 
 }

@@ -10,7 +10,7 @@ Jackson is very useful for automatic serialisation and de-serialisation of data.
 ## Data Transfer Objects
 The great benefit of using Lombok and Jackson together is that it makes it easy to work with [data transfer objects](https://martinfowler.com/eaaCatalog/dataTransferObject.html).
  
-Check out the DogApplication
+Check out the TriviaApplication
 
 Why is it good to use a data transfer object?
 * keep your method parameters tidy
