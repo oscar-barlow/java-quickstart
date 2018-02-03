@@ -7,6 +7,7 @@ import org.junit.Test;
 
 public class ParameterStringBuilderTest {
 
+
   @Test
   public void shouldBuildQueryParams() {
     Map<String, String> params = ImmutableMap.of("page", "0", "size", "20");
