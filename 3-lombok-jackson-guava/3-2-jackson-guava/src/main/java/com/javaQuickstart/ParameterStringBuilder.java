@@ -1,3 +1,5 @@
+package com.javaQuickstart;
+
 import static java.util.stream.Collectors.toList;
 
 import com.google.common.base.Joiner;

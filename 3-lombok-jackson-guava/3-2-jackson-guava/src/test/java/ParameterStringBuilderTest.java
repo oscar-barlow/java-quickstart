@@ -1,8 +1,8 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.google.common.collect.ImmutableMap;
+import com.javaQuickstart.ParameterStringBuilder;
 import java.util.Map;
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 public class ParameterStringBuilderTest {
