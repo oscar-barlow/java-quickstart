@@ -1,8 +1,8 @@
-import static org.assertj.core.api.Assertions.assertThat;
+package com.javaquickstart.jacksonguava;
 
 import com.google.common.collect.ImmutableMap;
-import com.javaQuickstart.ParameterStringBuilder;
 import java.util.Map;
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 public class ParameterStringBuilderTest {
@@ -13,6 +13,6 @@ public class ParameterStringBuilderTest {
     Map<String, String> params = ImmutableMap.of("page", "0", "size", "20");
     String paramsString = ParameterStringBuilder.getParamsString(params);
 
-    assertThat(paramsString).isEqualTo("page=0&size=20");
+    Assertions.assertThat(paramsString).isEqualTo("page=0&size=20");
   }
 }

@@ -1,0 +1,263 @@
+defaults: &defaults
+  working_directory: ~/code
+  docker:
+    - image: circleci/openjdk:8-jdk-node-browsers
+
+version: 2
+jobs:
+  build:
+    <<: *defaults
+    environment:
+      JVM_OPTS: -Xmx3200m
+    steps:
+    - checkout
+    - restore_cache:
+        keys:
+        - v2-dep-{{ checksum "build.gradle" }}-
+    - run:
+        name: Compile
+        command: ./gradlew clean assemble testClasses --no-daemon
+    - save_cache:
+        key: v2-dep-{{ checksum "build.gradle" }}-{{ epoch }}
+        paths:
+          - ~/.gradle
+    - persist_to_workspace:
+        root: ~/
+        paths:
+          - code/build
+          - code/kube
+          - code/.git
+          - .ssh/known_hosts
+    - store_artifacts:
+        path: build/libs
+
+  aws_client:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          keys:
+            - v1-awsclient-
+      - run:
+          name: Install AWS client
+          command: |
+            if [ ! -f "/home/circleci/bin/aws" ]; then
+            wget "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip"
+            unzip awscli-bundle.zip
+            mkdir /home/circleci/bin
+            ./awscli-bundle/install -b /home/circleci/bin/aws
+            rm awscli-bundle.zip
+            fi
+      - run:
+          name: Create AWS config
+          command: |
+            mkdir /home/circleci/.aws
+            echo "[default]" > ~/.aws/credentials
+            echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> /home/circleci/.aws/credentials
+            echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> /home/circleci/.aws/credentials
+            touch /home/circleci/.aws/config
+            chmod 600 /home/circleci/.aws/credentials /home/circleci/.aws/config
+      - save_cache:
+          key: v1-awsclient-{{ epoch }}
+          paths:
+            - ~/.local
+            - ~/bin
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - .aws
+
+  secrets:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/
+      - restore_cache:
+          keys:
+            - v1-awsclient-
+      - run:
+          name: Clone Piano Infra
+          command: git clone --depth 1 -b circleci-2.0 git@github.com:SainsburysNDA/piano-infra.git
+      - run:
+          name: Decrypt secrets
+          command: |
+            export PATH=/home/circleci/bin:$PATH
+            cd ./piano-infra/build
+            ./decrypt_secrets.sh
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - code/piano-infra
+      - store_artifacts:
+          path: build/libs
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - .aws
+
+  tests:
+    <<: *defaults
+    environment:
+      JVM_OPTS: -Xmx3200m
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/
+      - restore_cache:
+          keys:
+            - v2-dep-{{ checksum "build.gradle" }}-
+      - restore_cache:
+          keys:
+            - v1-awsclient-
+      - run:
+         name: Unit and integration test
+         command: ./gradlew check --no-daemon --stacktrace
+         no_output_timeout: 30m
+      - run:
+         name: Save test results
+         command: |
+           mkdir -p build/reports/tests/ build/unit-test-results/
+           find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/code/build/unit-test-results/ \;
+         when: always
+      - store_test_results:
+          path: build/unit-test-results
+      - store_artifacts:
+          path: build/reports/tests
+      - run:
+          name: Contract Tests
+          command: |
+            rm -rf build/test-results
+            source piano-infra/build/circle.env
+            ./gradlew testClasses pactVerify --stacktrace --no-daemon
+
+  publish:
+    <<: *defaults
+    steps:
+      - setup_remote_docker
+      - checkout
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Publish Docker image
+          command: |
+            source piano-infra/build/circle.env
+            ./piano-infra/build/publish.sh
+
+  deploy-preprod:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
+      - restore_cache:
+          keys:
+            - v1-awsclient-
+      - deploy:
+          name: Deploy to preprod
+          command: |
+            export PATH=/home/circleci/bin:$PATH
+            unset AWS_ACCESS_KEY_ID
+            unset AWS_SECRET_ACCESS_KEY
+            source piano-infra/build/circle.env
+            ./piano-infra/build/deploy.sh --env=test
+
+  deploy-prod:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/
+      - restore_cache:
+          keys:
+            - v1-awsclient-
+      - deploy:
+          name: Deploy to prod
+          command: |
+            export PATH=/home/circleci/bin:$PATH
+            unset AWS_ACCESS_KEY_ID
+            unset AWS_SECRET_ACCESS_KEY
+            source piano-infra/build/circle.env
+            ./piano-infra/build/deploy.sh --env=prod
+      - store_artifacts:
+          path: build/reports/pact
+
+workflows:
+  version: 2
+
+  build_and_publish:
+    jobs:
+    - build:
+       filters:
+          branches:
+            only: /.*/
+          tags:
+            ignore: /.*/
+    - aws_client:
+        filters:
+          branches:
+            only: /.*/
+          tags:
+            ignore: /.*/
+    - secrets:
+        filters:
+          branches:
+            only: /.*/
+          tags:
+            ignore: /.*/
+        requires:
+          - aws_client
+    - tests:
+        filters:
+          branches:
+            only: /.*/
+          tags:
+            ignore: /.*/
+        requires:
+          - build
+          - secrets
+    - publish:
+        filters:
+          branches:
+            only: master
+          tags:
+            ignore: /.*/
+        requires:
+          - build
+          - secrets
+          - tests
+    - deploy-preprod:
+        filters:
+          branches:
+            only: master
+          tags:
+            ignore: /.*/
+        requires:
+         - build
+         - aws_client
+         - secrets
+         - publish
+
+  deploy_prod:
+    jobs:
+    - aws_client:
+        filters:
+          tags:
+            only: prod
+          branches:
+            ignore: /.*/
+    - secrets:
+        filters:
+          tags:
+            only: prod
+          branches:
+            ignore: /.*/
+        requires:
+          - aws_client
+    - deploy-prod:
+        filters:
+          tags:
+            only: prod
+          branches:
+            ignore: /.*/
+        requires:
+          - aws_client
+          - secrets

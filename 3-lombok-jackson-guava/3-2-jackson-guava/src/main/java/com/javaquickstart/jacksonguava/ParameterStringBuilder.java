@@ -1,4 +1,4 @@
-package com.javaQuickstart;
+package com.javaquickstart.jacksonguava;
 
 import static java.util.stream.Collectors.toList;
 

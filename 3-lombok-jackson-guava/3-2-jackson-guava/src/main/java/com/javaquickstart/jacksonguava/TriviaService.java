@@ -1,4 +1,4 @@
-package com.javaQuickstart;
+package com.javaquickstart.jacksonguava;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.javaQuickstart;
+package com.javaquickstart.jacksonguava;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
