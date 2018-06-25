@@ -11,7 +11,9 @@ import lombok.Value;
 @AllArgsConstructor
 public class Questions {
 
+  @JsonProperty("response_code")
+  private final String responseCode;
   @JsonProperty("results")
-  private List<Question> questions;
+  private final List<Question> questions;
 
 }

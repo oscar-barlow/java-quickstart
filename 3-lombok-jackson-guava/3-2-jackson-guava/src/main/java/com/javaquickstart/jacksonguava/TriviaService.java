@@ -7,8 +7,8 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class TriviaService {
 
-  private final TriviaClient triviaClient;
   private final ObjectMapper objectMapper;
+  private final TriviaClient triviaClient;
 
   public Questions getRandomQuestions(int number) {
     String response = triviaClient.getRandomQuestions(number);

@@ -11,16 +11,9 @@ import lombok.Value;
 @AllArgsConstructor
 public class Question {
 
-  @JsonProperty("category")
   private String category;
-
-  @JsonProperty("type")
   private String type;
-
-  @JsonProperty("difficulty")
   private String difficulty;
-
-  @JsonProperty("question")
   private String question;
 
   @JsonProperty("correct_answer")
