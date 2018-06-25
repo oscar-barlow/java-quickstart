@@ -32,7 +32,7 @@ public class TriviaClient {
       connection.disconnect();
 
       return response.toString();
-    } catch (Exception e) {
+    } catch (IOException e) {
       throw new RuntimeException(format("Bad request", e));
     }
   }

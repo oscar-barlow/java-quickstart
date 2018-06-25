@@ -11,12 +11,12 @@ public class TriviaService {
   private final TriviaClient triviaClient;
 
   public Questions getRandomQuestions(int number) {
-    String response = triviaClient.getRandomQuestions(number);
     try {
+      String response = triviaClient.getRandomQuestions(number);
       Questions questions = objectMapper.readValue(response, Questions.class);
       return questions;
-    } catch (IOException e) {
-      throw new RuntimeException("Could not read response from trivia api", e);
+    } catch (Exception e) {
+      throw new RuntimeException("Could not read response from trivia api: " + e);
     }
   }
 
