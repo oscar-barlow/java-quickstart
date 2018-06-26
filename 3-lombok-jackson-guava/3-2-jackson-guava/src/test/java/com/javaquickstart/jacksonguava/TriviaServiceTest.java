@@ -46,7 +46,7 @@ public class TriviaServiceTest {
 
   @Test
   public void shouldThrowRuntimeExceptionGivenCallFails() {
-    given(triviaClient.getRandomQuestions(1)).willAnswer(i -> new IOException("Sorry, something failed"));
+    given(triviaClient.getRandomQuestions(1)).willThrow(new RuntimeException("Something bad happened"));
 
     assertThatThrownBy(() -> underTest.getRandomQuestions(1))
         .isInstanceOf(RuntimeException.class)
