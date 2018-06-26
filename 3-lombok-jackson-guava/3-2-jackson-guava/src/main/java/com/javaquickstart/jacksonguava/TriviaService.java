@@ -1,7 +1,7 @@
 package com.javaquickstart.jacksonguava;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.IOException;
+import com.javaquickstart.jacksonguava.web.TriviaClient;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
