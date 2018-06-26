@@ -1,6 +1,7 @@
 package com.javaquickstart.jacksonguava;
 
 import com.google.common.collect.ImmutableMap;
+import com.javaquickstart.jacksonguava.web.ParameterStringBuilder;
 import java.util.Map;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;

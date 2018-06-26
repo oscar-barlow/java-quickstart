@@ -7,7 +7,7 @@ import static org.mockito.BDDMockito.given;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
-import java.io.IOException;
+import com.javaquickstart.jacksonguava.web.TriviaClient;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
