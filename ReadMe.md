@@ -22,7 +22,7 @@ The course makes the assumption that you already know about:
 
 This course is envisaged as a **supplement** to the learning that you should already be doing, as a bootcamp grad who wants to learn Java: Googling, reading StackOverflow, playing around with code samples, going on codewars, taking udemy courses, and so on. 
 
-On this point, I'd like to recommend Tim Buchalka's [Complete Java Masterclass](https://www.udemy.com/java-the-complete-java-developer-course/learn/v4/overview) udemy course. Tim gives a very thorough introduction to Java, from the ground up, and in doing so has saved a lot of space in this course! 
+On this point, Tim Buchalka's [Complete Java Masterclass](https://www.udemy.com/java-the-complete-java-developer-course/learn/v4/overview) udemy course is recommended. Tim gives a very thorough introduction to Java, from the ground up, and in doing so has saved a lot of space in this course! If you buy Tim's course, work through it in parallel rather than as prerequiste to this course - dip in and out as you need to understand things. 
 
 By buying Tim's course you can get a 90-day trial license for IntelliJ IDEA, an industry-standard Integrated Development Environment for Java. 
 
@@ -52,6 +52,10 @@ Challenge: codewars
 Challenge: Airport
 
 ### [3. Common Libraries: Lombok, Jackson, and Guava](3-lombok-jackson-guava)
+* Lombok
+* Jackson and Guava
+
+Challenge: write an API payload out to a CSV
 
 ### [4. Spring Boot](4-spring-boot)
 
