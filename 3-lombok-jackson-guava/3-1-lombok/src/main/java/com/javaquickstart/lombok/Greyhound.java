@@ -1,3 +1,5 @@
+package com.javaquickstart.lombok;
+
 public class Greyhound {
 
   private String name;

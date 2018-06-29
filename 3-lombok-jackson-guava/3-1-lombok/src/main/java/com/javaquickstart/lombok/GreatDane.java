@@ -1,3 +1,5 @@
+package com.javaquickstart.lombok;
+
 public class GreatDane {
 
   private final String name;
