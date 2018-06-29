@@ -1,4 +1,4 @@
-package com.javaQuickstart.summing;
+package com.javaQuickstart.streams.summing;
 
 import java.util.List;
 import java.util.stream.IntStream;

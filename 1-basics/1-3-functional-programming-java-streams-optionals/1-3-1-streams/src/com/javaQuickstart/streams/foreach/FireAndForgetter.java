@@ -1,4 +1,4 @@
-package com.javaQuickstart.foreach;
+package com.javaQuickstart.streams.foreach;
 
 import java.util.List;
 

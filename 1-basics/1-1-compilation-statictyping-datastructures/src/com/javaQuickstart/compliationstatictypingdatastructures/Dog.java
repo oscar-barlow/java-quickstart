@@ -1,4 +1,4 @@
-package com.javaQuickstart;
+package com.javaQuickstart.compliationstatictypingdatastructures;
 
 public class Dog {
 

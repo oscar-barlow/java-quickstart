@@ -1,4 +1,4 @@
-package com.javaQuickstart.transforming;
+package com.javaQuickstart.streams.transforming;
 
 import java.util.function.Function;
 

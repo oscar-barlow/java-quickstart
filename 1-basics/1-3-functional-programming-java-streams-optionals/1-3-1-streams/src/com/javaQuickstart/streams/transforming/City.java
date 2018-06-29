@@ -1,4 +1,4 @@
-package com.javaQuickstart.transforming;
+package com.javaQuickstart.streams.transforming;
 
 import static java.lang.String.format;
 

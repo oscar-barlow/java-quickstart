@@ -1,9 +1,9 @@
-package com.javaQuickstart;
+package com.javaQuickstart.interfaces;
 
-import com.javaQuickstart.export.FileExportOperation;
-import com.javaQuickstart.export.SftpFileExportService;
+import com.javaQuickstart.interfaces.export.FileExportOperation;
+import com.javaQuickstart.interfaces.export.SftpFileExportService;
 
-public class FileExporter {
+public class FileExporterApplication {
 
   // Implement the FileExportOperation interface in another class, and then replace the Sftp exporter with it.
   // You shouldn't need to change anything else for the code to run!

@@ -1,12 +1,14 @@
-package com.javaQuickstart;
+package com.javaQuickstart.streams;
 
 import static java.util.Arrays.asList;
 
-import com.javaQuickstart.transforming.City;
-import com.javaQuickstart.transforming.CityTransformer;
-import com.javaQuickstart.filtering.NameFilterer;
-import com.javaQuickstart.foreach.FireAndForgetter;
-import com.javaQuickstart.summing.IntegerSummer;
+import com.javaQuickstart.streams.filtering.NameFilterer;
+import com.javaQuickstart.streams.foreach.FireAndForgetRequest;
+import com.javaQuickstart.streams.foreach.FireAndForgetter;
+import com.javaQuickstart.streams.summing.IntegerSummer;
+import com.javaQuickstart.streams.transforming.City;
+import com.javaQuickstart.streams.transforming.CityTransformer;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,7 +26,7 @@ public class StreamsExamples {
       int simpleTotal = integerSummer.sum(simpleIntegers);
       System.out.println("The sum is: " + simpleTotal);
 
-//      List<Integer> integerArrayList = new ArrayList<>(asList(64, 876, 99, 100));
+//      List<Integer> integerArrayList = new ArrayList<Integer>(asList(64, 876, 99, 100));
 //      int moreComplicatedTotal = integerSummer.sum(integerArrayList);
 //      System.out.println("The sum is: " + moreComplicatedTotal);
 
@@ -32,7 +34,7 @@ public class StreamsExamples {
 //          "*** some important data 123 ***");
 //      FireAndForgetRequest fireAndForgetRequest2 = new FireAndForgetRequest(
 //          "*** more important data 456 ***");
-//      List<FireAndForgetRequest> requests = Arrays.asList(fireAndForgetRequest1, fireAndForgetRequest2);
+//      List<FireAndForgetRequest> requests = asList(fireAndForgetRequest1, fireAndForgetRequest2);
 //      fireAndForgetter.sendRequests(requests);
 
 //      List<String> names = asList("Bob", "Yuki", "Manuela", "Tamara");

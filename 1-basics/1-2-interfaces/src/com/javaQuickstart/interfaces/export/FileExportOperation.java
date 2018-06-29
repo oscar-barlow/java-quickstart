@@ -1,4 +1,4 @@
-package com.javaQuickstart.export;
+package com.javaQuickstart.interfaces.export;
 
 public interface FileExportOperation {
 
