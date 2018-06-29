@@ -62,4 +62,11 @@ Luckily, `Optional` is here to help us out.
 ## Optional - a box that is sometimes empty
 A good, simple way to think about `Optional` is: **a box that has space for a value, that is sometimes empty and sometimes has a value in it.**
 
-If we use an `Optional` rather than passing a value around directly, then we can avoid null pointers and gain a much more elegant way of controlling flow in case of a null value. Check out the example code to see it in action. 
+If we use an `Optional` rather than passing a value around directly, then we can avoid null pointers and gain a much more elegant way of controlling flow in case of a null value. 
+
+Check out the example code - it contains a typical use case for `Optional`. Here, it turns out that Tokyo's inhabitants data is missing. Because we've used `Optional`, we can handle this in code; we supply a value in case the value is missing. This is one way to use `Optional`; alternatives include:
+
+* writing a lambda to provide the missing value (e.g., we could make an HTTP client call to find out Tokyo's population)
+* throwing an exception.
+
+ 

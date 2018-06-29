@@ -1,10 +1,10 @@
-package com.javaQuickstart;
+package com.javaQuickstart.optional;
 
 import static java.util.Arrays.asList;
 
 import java.util.List;
 
-public class OptionalExample {
+public class Application {
 
   private static final CityDetailsPrinter cityDetailsPrinter = new CityDetailsPrinter();
 

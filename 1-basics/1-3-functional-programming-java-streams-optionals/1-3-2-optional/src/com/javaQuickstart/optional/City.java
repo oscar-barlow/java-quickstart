@@ -1,4 +1,4 @@
-package com.javaQuickstart;
+package com.javaQuickstart.optional;
 
 import static java.lang.String.format;
 
