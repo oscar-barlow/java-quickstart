@@ -1,0 +1,2 @@
+Text that has been joined
+to all be on one line

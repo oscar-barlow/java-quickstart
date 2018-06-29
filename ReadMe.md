@@ -46,7 +46,7 @@ Challenge: codewars
  
 ### [2. Testing, Build Tools, and Exceptions](2-testing-buildtools-exceptions)
 * Build Tools: Maven and Gradle
-* Testing, Mocking, Stubbing and Spying
+* Testing, Mocking, Stubbing and Verifying 
 * Debugging, and Handling Exceptions 
 
 Challenge: Airport

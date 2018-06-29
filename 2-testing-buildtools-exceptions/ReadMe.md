@@ -6,7 +6,7 @@ This goal of this section is for you to be able to test-drive the development of
 This chapter has the following sections:
 
 1. [Build Tools](2-1-buildtools-gradle-maven)
-2. [Testing, Mocking, Stubbing, and Spying](2-2-testing-stubbing-spying)
+2. [Testing, Mocking, Stubbing, and Verifying](2-2-testing-stubbing-verifying)
 3. [Debugging, and Handling Exceptions](2-3-debugging-handling-exceptions)
 
 ## Challenge: Airport
