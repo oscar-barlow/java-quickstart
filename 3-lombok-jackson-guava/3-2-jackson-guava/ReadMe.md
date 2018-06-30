@@ -37,7 +37,7 @@ If you make a request to the web trivia api (try using the same request as is in
 
 And yet, when we log out the questions, we don't have to do any kind of JSON parsing or anything. We can in fact just call a getter for a field on the `Question` class.
 
-This is because Jackson has parsed the JSON into a `Questions` object, and then further into individual `Question` objects. 
+This is because Jackson has parsed the JSON into a `Questions` object, and then further into individual `Question` objects. Importantly, the Java objects have exactly the same structure, and exactly the same field names as the JSON. Otherwise Jackson wouldn't know how to do the deserialisation. 
 
 Jackson is a very mature Java library, the purpose of which is to make it trivial to work with data in other formats (XML, CSV, JSON) in code. A lot of what Jackson does is done by the `ObjectMapper` class. You can see it at work in the `TriviaService` class in this project.
 
