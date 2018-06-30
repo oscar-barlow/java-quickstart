@@ -55,7 +55,7 @@ Challenge: Airport
 * Lombok
 * Jackson and Guava
 
-Challenge: write an API payload out to a CSV
+Challenge: writing city data to CSV. 
 
 ### [4. Spring Boot](4-spring-boot)
 
