@@ -1,9 +1,11 @@
 # Lombok, Jackson and Guava
 
 ## Introduction
-The goal of this section is to show you some commonly-used libraries in Java development. By the end of this section, you should be able to consume and work with data from a public web API.
+The goal of this section is to show you some commonly-used libraries in Java development. By the end of this chapter, you should be able to consume and work with data from a public web API.
 
-The libraries covered are:
+When you've completed the following sections, complete the challenge at the bottom of this page to consolidate your knowledge.
+
+## Sections
 
 1. [Lombok](3-1-lombok)
 2. [Jackson & Guava](3-2-jackson-guava)
@@ -14,7 +16,7 @@ These libraries are all huge, and very mature. They also contain a lot of materi
 * Jackson: convert data to different formats, into and out of code
 * Guava: convenient utilities that seem like they should be built in to Java
 
-## Challenge
+## Challenge: Write City Data to CSV 
 Find out your GPS co-ordinates, then use the public [Teleport API](https://developers.teleport.org/api/) to find the nearest cities to that location.
 
 Then use teleport to get basic information about each of the nearest cities - its population and any alternate names.

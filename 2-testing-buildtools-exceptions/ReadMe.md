@@ -1,9 +1,9 @@
 # Testing, Build Tools, and Exceptions
 
 ## Introduction
-This goal of this section is for you to be able to test-drive the development of a simple object-oriented Java app.
+This goal of this section is for you to be able to test-drive the development of a simple object-oriented Java app. When you've gone through the following sections, complete the challenge at the bottom of this page to consolidate your knowledge.
 
-This chapter has the following sections:
+## Sections
 
 1. [Build Tools](2-1-buildtools-gradle-maven)
 2. [Testing, Mocking, Stubbing, and Verifying](2-2-testing-stubbing-verifying)
