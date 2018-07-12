@@ -47,12 +47,18 @@ If you prefer to learn through video courses, [Dan Vega's Spring Boot udemy cour
 
 Finally, the [Spring Guides](https://spring.io/guides), maintained by the Spring team, are a very useful resource.
 
-* 
-
-IOC & App context
-Dan Vega
-Spring guides
-
 * Introduction to the Spring framework
 * Configuration, Profiles and Testing
 * Controllers and Validation
+
+## Sections
+1. Introduction to the Spring framework
+2. Configuration, Profiles and Testing
+3. Controllers and Validation
+
+# Challenge: Food Standards API
+Using the [FSA food hygiene rating data API](http://ratings.food.gov.uk/open-data/en-GB), use Spring to produce a web application that implements the following user story:
+
+```
+As a user I want to see how food hygiene ratings are distributed by percentage across a selected Local Authority so that I can understand the profile of establishments in that authority.
+```
