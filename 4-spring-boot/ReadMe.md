@@ -47,10 +47,6 @@ If you prefer to learn through video courses, [Dan Vega's Spring Boot udemy cour
 
 Finally, the [Spring Guides](https://spring.io/guides), maintained by the Spring team, are a very useful resource.
 
-* Introduction to the Spring framework
-* Configuration, Profiles and Testing
-* Controllers and Validation
-
 ## Sections
 1. Introduction to the Spring framework
 2. Configuration, Profiles and Testing
