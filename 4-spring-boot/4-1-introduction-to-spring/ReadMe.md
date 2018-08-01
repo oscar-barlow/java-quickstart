@@ -40,7 +40,11 @@ So, when you run the `main` method of the Spring Boot application in this projec
 2. Because it is annotated with `@Configuration`, the `RandomDogImageApplication` class is given the authority to add Spring beans to the application context.
 3. Because it is annotated with `@ComponentScan`, Spring scans through the `com.javaquickstart.introductiontospring` package looking for classes that are annotated with Spring annotations, and adds them to the context
 4. Because it is annotated with `@EnableAutoConfiguration`, Spring makes assumptions about your application. In this case, as Thymeleaf is installed as a dependency, Spring assumes it should be used as a template engine. 
-5. The application context uses its bean factory to instantiate the classes required by your application, including providing dependencies to classes that need them.
+5. The application context uses its bean factory to instantiate the classes required by your application, **including providing dependencies to classes that need them**.
+
+This last point makes it extremely convenient to write Spring applications. You can forget all about initialising your classes' dependencies (and their dependencies...) when you run your application. Spring will do it for you. All you need to do is add the dependency as a field on your class, and as a constructor parameter*. Spring usually figures the rest out.
+
+Freed from the requirement to worry about initialising classes and dependencies, you can concentrate on object-oriented design. This is why Spring is so popular with Java developers.
 
 Check out the `ApplicationContextTest`. The `@Autowired` annotation has been used to gain access to the application context. Use IntelliJ's debugger feature to check it out - see what dependencies it has, what methods it has, and dig into the bean creation factory to see where all the Spring beans for this project are registered. 
 
@@ -49,13 +53,14 @@ The term 'Spring bean' has been used a lot in this readme! It's important to und
 
 A Java bean is a term for a type of object conventionally used in Java programming. Its properties are described in [this StackOverflow answer](https://stackoverflow.com/questions/3295496/what-is-a-javabean-exactly#3295517).
 
-On the other hand, a Spring bean is *a class that is known to the Spring application context*. You make classes known to the Spring application context by adding annotations to them, including:
+On the other hand, a Spring bean is *a class that is known to the Spring application context*. You make classes known to the Spring application context by adding 'stereotype' annotations to them, including:
 
 * `@Service`
 * `@Controller`
 * `@Component`
 
-Amongst others.
+### Mini-challenge
+What other stereotype annotations create Spring beans? What do they do, and how are they different to the ones above?
 
 ### Mini-challenge
 Look through the application in the `com.javaquickstart.introductiontospring` package. Given the concepts explained above, can you understand how the application fits together?
@@ -63,3 +68,6 @@ Look through the application in the `com.javaquickstart.introductiontospring` pa
 If so, create a new Spring Boot web application project that takes a user's first name and last name, then greets them with the current date and time. When using the Initializr, make sure to click to display the full version of the Initializr - you will see the huge amount of libraries available to you to bootstrap various different types of application. At minimum you'll need the Web dependencies, and if you want your application to be able to display an HTML page, you will want a template framework like Thymeleaf. The Lombok dependency may be helpful also.
 
 The [Spring Guides](https://spring.io/guides) may be useful if you get stuck. 
+
+---
+* Of course, if you're using Lombok, you probably won't have a constructor at all - making it even simpler to add dependencies to classes.

@@ -2,7 +2,6 @@ package com.javaquickstart.introductiontospring;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,8 @@ public class ApplicationContextTest {
 
   @Test
   public void showMeApplicationContext() {
-    final String applicationName = applicationContext.getApplicationName();
+    final String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
 
-    assertThat(applicationName).isNotBlank();
+    assertThat(beanDefinitionNames).isNotEmpty();
   }
 }
