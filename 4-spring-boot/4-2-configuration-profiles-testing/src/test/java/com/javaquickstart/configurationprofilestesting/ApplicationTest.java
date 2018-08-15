@@ -1,6 +1,7 @@
-package com.javaquickstart.introductiontospring;
+package com.javaquickstart.configurationprofilestesting;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,9 +17,9 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(webEnvironment = RANDOM_PORT)
 @TestPropertySource(properties = "management.server.port=0")
-public class RandomDogImageApplicationTests {
+public class ApplicationTest {
 
 	private RestOperations restOperations = new RestTemplate();
 

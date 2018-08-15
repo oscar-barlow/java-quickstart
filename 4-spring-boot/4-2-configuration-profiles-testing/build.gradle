@@ -25,10 +25,9 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-actuator:2.0.2.RELEASE')
-	compile group: 'com.mashape.unirest', name: 'unirest-java', version: '1.4.9'
+	compile('com.squareup.okhttp3:okhttp:3.11.0')
 
 	compileOnly('org.projectlombok:lombok')
 
