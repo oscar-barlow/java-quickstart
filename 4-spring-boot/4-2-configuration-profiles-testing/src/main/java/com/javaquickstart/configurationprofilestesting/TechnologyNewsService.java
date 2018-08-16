@@ -11,6 +11,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Request.Builder;
 import okhttp3.Response;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,13 +20,15 @@ public class TechnologyNewsService implements TechnologyNewsOperation {
 
   private final OkHttpClient okHttpClient;
   private final ObjectMapper mapper;
+
+  @Value("${application.guardian-api-key}")
   private final String apiKey;
 
   private static final String GUARDIAN_TECH_NEWS_BASE_URL = "https://content.guardianapis.com/search?sectionName=technology";
 
   @Override
   public List<String> getHeadlines() {
-    final Response response = makeRequest();
+    final Response response = fetchNews();
     try {
       final GuardianSummary guardianSummary = mapper
           .readValue(response.body().byteStream(), GuardianSummary.class);
@@ -39,7 +42,7 @@ public class TechnologyNewsService implements TechnologyNewsOperation {
     }
   }
 
-  private Response makeRequest() {
+  private Response fetchNews() {
     final Request request = new Builder()
         .url(GUARDIAN_TECH_NEWS_BASE_URL + format("&api-key=%s", apiKey))
         .build();

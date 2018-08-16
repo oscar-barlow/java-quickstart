@@ -7,3 +7,6 @@ management:
       exposure:
         include:
           - "health"
+
+application:
+  guardian-api-key: notTheRealKeyLol
