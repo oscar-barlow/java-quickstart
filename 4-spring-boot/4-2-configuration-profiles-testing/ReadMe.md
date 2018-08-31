@@ -59,24 +59,60 @@ But by default, `ObjectMapper` serialises dates and times as follows:
 This might suit your needs, or you might want something more easily human-readable. Check out the `ObjectMapperTest` class. In there, there's an `ObjectMapper` instantiated inline, and an `@Autowired` one produced as specified in the `ObjectMapperConfiguration` configuration class. Although `ObjectMapper` is asked to do exactly the same thing in each test, because different versions of `ObjectMapper` is used - and they behave differently.  
 
 ### 3. Mocking a Bean
-Check out the 
+Check out the `TechologyNewsService`. It's responsible for making a call to the [Guardian Content API](https://open-platform.theguardian.com/) to retrieve the latest technology news headlines, then transforming the results into a list of headlines. It uses a couple of dependencies to accomplish this - client to do the fetching, and an `ObjectMapper` to do deserialise the response.
 
-Think about AWS s3 client
-Don't want a real one in test
-Use a configuration to create a fake one, using Mockito
-example
+When testing this class, it's not desirable to make an real call to the Guardian API. It would be much better to fake the API call, stub the response return, assert on the behaviour of the class given this controlled input.
 
-
+One way to approach this would be as in Chapter 2 of this course - creating mock objects in a test class, and then initialising the class under test with these mocks. Another way to do this, however, is with a configuration class. Have a look at the `MockClientConfiguration` class. By writing method in this class that returns a `GuardianNewsClient` and annotating it with `@Primary`, we are instructing Spring to use the mock bean created by the method in this class, instead of a real one (the one annotated with `@Component`).
+ 
 ## Profiles
-Allow us to specify when we want to use which configuration
-Very useful for testing
+Three cases are described above where you might use a configuration class to supply a bean of your specification to the Spring application context - whether that's because Spring can't do it automatically, you want to add customisation, or you want to mock a bean out for test purposes.
 
-## Spring Boot Testing
-Bring up spring context
-Controller testing
-Show the code
-Need to bring something in from yaml (value annotation)
-autowired
+Let's focus on the latter case. Perhaps you are writing tests for your application, and you encounter a problem: there are some tests in which you do want particular classes to be mocked out, and some tests in which you don't. For example, in the application in this project, perhaps you would like to extend your test coverage downwards - and instantiate a real `GuardianNewsClient` but with a mock `OKHttpClient`. Given that the `GuardianNewsClient` is already mocked, how will you do this?
+
+The answer is with profiles. Have another look at the `MockClientConfiguration` class, this time noticing the `@Profile` annotation on the class. This specifies that when the application context is started up in the 'mocked-client' profile, beans are to be created according to this class. Then check the `TechnologyNewsOperationTest` class, and notice the `@ActiveProfiles` annotation on the class. This specifies that, when the application context is created for this test class, it should be done in the 'mocked-client' profile.
+
+The combination of these two annotations, therefore, allows us to specify in which cases we want to use which configuration!
+
+### Externalised Configuration
+Both of the Spring Boot applications presented in this chapter contain a file in the 'resources' folder called `application.yml`. This is because Spring applications are able to access data from multiple sources for configuration, including:
+
+* OS environment variables
+* annotations on tests
+* (profile-specific) yaml or properties files
+
+A full list of the sources from which Spring can pull in configuration data is given, and the order of precedence each source takes, is given [here](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html).
+
+Because Spring has access to this data, we can start to use it in the code. Have a look at the `GuardianNewsClient` class, for example. Here, a value from `application.yml` is being used - a key to access the Guardian API. However, if you open up `application.yml`, you'll notice that a fake value is being used.  
 
 ### Mini-challenge
+Provide your API key ([register for one here](https://bonobo.capi.gutools.co.uk/register/developer)) to the application in this section in a way that takes precedence over the fake value in `application.yml`. Then run the application locally. Use curl, Postman, or similar to hit the application, and confirm that it's giving you the results you expect.
 
+Quite often, applications need to access something like this - something it would be useful to use in code, but which you don't want to commit in case your repository gets compromised. You wouldn't want to put an API key in code publicly viewable on Github for example, especially if it was for a commercial API - and you got charged every time you used it! Equally, you might want your application to use slightly different values between staging and production. For instance, you might want your http clients to access a different 3rd party's API in staging versus in production. 
+
+## Spring Boot Testing
+Let's tie this section up by looking at the various test classes and how they use the concepts we've explored in this section.
+
+### Bringing up a Partial Context
+Firstly, let's look at the `TechnologyNewsOperationTest` class, which should by now be understandable. 
+
+Firstly, You can see annotations on the test class that specify what test runner we want to use to run the test, and what profile we want it to run in. We are also instructing Spring that we do not want the application to be accessible from the web for the purposes of this test, and therefore we do not want Spring to create a web server when starting up the application context.
+
+As we're not going to access the application via a web request for the purposes of this test, this allows us to start the application in a way that resembles how the application will run in production, while not doing anything that's not necessary for the test, and so keeping the test run time reasonably fast.
+
+The [https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html](`@Autowired`) annotation has been used to manually request Spring to inject two test dependencies. The version of the `GuardianNewsClient` that will be provided will be a mocked version, because we're running the test in the 'mocked-client' profile. By autowire-ing this object, we get access to it directly in our test methods, and this means that we can do stubbing - as you can see in the test method.   
+
+### Controller Testing  
+Secondly, take a look at the `TechnologyNewsControllerTest`. In this test, we are simulating a web request to the application. We don't need to make a request to the real Guardian API, or even really bring up much of the application context. We just want to confirm that our controller works how we think it does - we only really want to test the web (as opposed to service) layer of the application. And so we only need to instantiate the parts of the application are that the controller depends on.
+
+A different annotation is used to accomplish this: `@WebMvcTest`. You'll also see that, rather than using a configuration class, a mock of the `TechnologyNewsOperation` gets provided to this minimal application context by the `@MockBean` annotation. It's up to you when to use configuration and when to use `@MockBean`, however the latter is often used in controller tests, as controllers often have few dependencies and it's simpler to keep everything together in one file.
+
+Finally, we use the `MockMvc` class to fake making a web request to the application and assert that the JSON returned looks like we think it should.  
+
+### Integration Testing
+By combining the approaches above, it would be possible to create an integration test for this application: by bringing up a full application context (with mocks as necessary), including a web environment, and then simulating web requests to the application.  
+
+### Mini-challenge
+Create a news summariser app that has an endpoint which returns the day's most recent headlines, along with the first part of the article. You're free to use the Guardian API or any other for this.
+
+Unit, component, and integration test the app. Make sure to test the unhappy path (exceptions being throw, etc) as well as the happy path.

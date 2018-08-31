@@ -15,7 +15,7 @@ public class TechnologyNewsController {
 
   @GetMapping("headlines")
   public List<String> getNews() {
-    technologyNewsOperation.getHeadlines();
+    return technologyNewsOperation.getTechnologyHeadlines();
   }
 
 }

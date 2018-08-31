@@ -1,7 +1,6 @@
 package com.javaquickstart.configurationprofilestesting;
 
 import java.util.List;
-import javax.xml.transform.Result;
 import lombok.Builder;
 import lombok.Value;
 

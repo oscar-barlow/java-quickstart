@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface TechnologyNewsOperation {
 
-  List<String> getHeadlines();
+  List<String> getTechnologyHeadlines();
 
 }
