@@ -58,6 +58,11 @@ Challenge: Airport
 Challenge: Write City Data to CSV 
 
 ### [4. Spring Boot](4-spring-boot)
+* Introduction to the Spring framework
+* Configuration, Profiles and Testing
+* Controllers and Validation
+
+Challenge: food standards API
 
 # Contributing
 Pull requests welcome :)

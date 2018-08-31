@@ -1,0 +1,12 @@
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include:
+          - "health"
+
+application:
+  guardian-api-key: notTheRealKeyLol
