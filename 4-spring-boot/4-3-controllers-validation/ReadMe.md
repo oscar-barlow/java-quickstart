@@ -1,9 +1,9 @@
-# Controllers and Validation
+# 4.3 Controllers and Validation
 
 The goal of this section is to enable you to control the quality of data that is passed from one part of your application to another. After completing this section, you should be able to write a Spring Boot web application with controller validation, as well as validation in other meaningful parts of the application.
 
 ## Controller Validation
-In many web applications, the only way for data  to get into the application may be through POST-ing to a controller. 
+In many web applications, the only way for data  to get into the application may be through POST-ing to a controller.
 
 This means that it's a good idea to ensure that the data that gets passed on to other areas of your application is valid - that it's not missing an required parts, for example. Otherwise you'll have to write a lot of branching logic, or optionals, to try and prevent errors from occurring.
 
@@ -20,5 +20,4 @@ A pretty good set of validation annotations are built into Java - you can see so
 
 Sometimes, however, there may be validations that are specific to your domain. For this mini-challenge, write a validation 'description' field of the `CreateTodo` class: it must be at least three words long. The DZone blog post [Create Your Own Constraints With Bean Validation 2.0](https://dzone.com/articles/create-your-own-constraint-with-bean-validation-20) contains instructions about how to do this (ignore the section about the POM file).
 
-Write tests to ensure your validation works. 
-
+Write tests to ensure your validation works.

@@ -1,5 +1,5 @@
-# Configuration, Profiles, and Testing
- 
+# 4.2 Configuration, Profiles, and Testing
+
 ## Introduction
 The goal of this section is to enable you to test a Spring Boot web application. You should already be familiar with how to write unit tests in Java from chapter two. Therefore, this section focuses more on integration and controller tests. After completing this section, you should be able to write well-tested Spring Boot web application.
 
@@ -34,7 +34,7 @@ public class S3Configuration {
 
 }
 ```
-The `S3Configuration` class is annotated with `@Configuration`, so Spring allows it to add beans beans to the application context. The method annotated with `@Bean` supplies a bean of type `AmazonS3` to the context, so it can be injected into classes that depend on it. 
+The `S3Configuration` class is annotated with `@Configuration`, so Spring allows it to add beans beans to the application context. The method annotated with `@Bean` supplies a bean of type `AmazonS3` to the context, so it can be injected into classes that depend on it.
 
 Amazon S3 clients objects are not trivial to initialise, and usually require even more set up than you can see above to get them to work properly. For this reason, you cannot simply initialise them with a constructor. If this configuration class did not exist, Spring would not be able to produce a working Amazon S3 client, and the application using it would not work.
 
@@ -64,7 +64,7 @@ Check out the `TechologyNewsService`. It's responsible for making a call to the 
 When testing this class, it's not desirable to make an real call to the Guardian API. It would be much better to fake the API call, stub the response return, assert on the behaviour of the class given this controlled input.
 
 One way to approach this would be as in Chapter 2 of this course - creating mock objects in a test class, and then initialising the class under test with these mocks. Another way to do this, however, is with a configuration class. Have a look at the `MockClientConfiguration` class. By writing method in this class that returns a `GuardianNewsClient` and annotating it with `@Primary`, we are instructing Spring to use the mock bean created by the method in this class, instead of a real one (the one annotated with `@Component`).
- 
+
 ## Profiles
 Three cases are described above where you might use a configuration class to supply a bean of your specification to the Spring application context - whether that's because Spring can't do it automatically, you want to add customisation, or you want to mock a bean out for test purposes.
 
@@ -88,13 +88,13 @@ Because Spring has access to this data, we can start to use it in the code. Have
 ### Mini-challenge
 Provide your API key ([register for one here](https://bonobo.capi.gutools.co.uk/register/developer)) to the application in this section in a way that takes precedence over the fake value in `application.yml`. Then run the application locally. Use curl, Postman, or similar to hit the application, and confirm that it's giving you the results you expect.
 
-Quite often, applications need to access something like this - something it would be useful to use in code, but which you don't want to commit in case your repository gets compromised. You wouldn't want to put an API key in code publicly viewable on Github for example, especially if it was for a commercial API - and you got charged every time you used it! Equally, you might want your application to use slightly different values between staging and production. For instance, you might want your http clients to access a different 3rd party's API in staging versus in production. 
+Quite often, applications need to access something like this - something it would be useful to use in code, but which you don't want to commit in case your repository gets compromised. You wouldn't want to put an API key in code publicly viewable on Github for example, especially if it was for a commercial API - and you got charged every time you used it! Equally, you might want your application to use slightly different values between staging and production. For instance, you might want your http clients to access a different 3rd party's API in staging versus in production.
 
 ## Spring Boot Testing
 Let's tie this section up by looking at the various test classes and how they use the concepts we've explored in this section.
 
 ### Bringing up a Partial Context
-Firstly, let's look at the `TechnologyNewsOperationTest` class, which should by now be understandable. 
+Firstly, let's look at the `TechnologyNewsOperationTest` class, which should by now be understandable.
 
 Firstly, You can see annotations on the test class that specify what test runner we want to use to run the test, and what profile we want it to run in. We are also instructing Spring that we do not want the application to be accessible from the web for the purposes of this test, and therefore we do not want Spring to create a web server when starting up the application context.
 
