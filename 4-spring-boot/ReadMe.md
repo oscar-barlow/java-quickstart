@@ -1,18 +1,18 @@
 # Spring Boot
 
 ## Introduction
-Spring Boot is a convention-over-configuration style Java framework for rapid application development. By adding remarkably few annotations to a Java application, you enable it to accept and respond to web requests. The goal of this chapter is to show you how to build an web application using Spring Boot. 
+Spring Boot is a convention-over-configuration style Java framework for rapid application development. By adding remarkably few annotations to a Java application, you enable it to accept and respond to web requests. The goal of this chapter is to show you how to build an web application using Spring Boot.
 
 Spring Boot is based on the Spring framework. The most important concept from Spring to understand, as you develop Spring Boot web applications, is called **Inversion of Control**.
 
 If you're doing good Object-Oriented programming, you should delegate different areas of responsibility to different classes within your application. This makes your code much easier to understand, and test. However, now your main application class will contain classes that it depends on, each of which may contain classes that those classes depend on, which may each contain yet more classes that these classes depend on!
 
-In this situation, you the programmer are not only responsible for delegating different areas of functionality to different classes - you are also responsible for initialising objects that each class depends upon, and then supplying it to that class as a constructor argument. 
+In this situation, you the programmer are not only responsible for delegating different areas of functionality to different classes - you are also responsible for initialising objects that each class depends upon, and then supplying it to that class as a constructor argument.
 
-This can lead to really unreadable, fragile code. For example, let's suppose we're creating a `BikeShopApplication`, similar to what we have done in previous chapters but more advanced. Our `BikeShop` contains (depends upon) a `Warehouse` object. In terms of dependencies, this is not too bad right now, as you can see in the following pseudocode example: 
+This can lead to really unreadable, fragile code. For example, let's suppose we're creating a `BikeShopApplication`, similar to what we have done in previous chapters but more advanced. Our `BikeShop` contains (depends upon) a `Warehouse` object. In terms of dependencies, this is not too bad right now, as you can see in the following pseudocode example:
 
 ```java
-BikeShopApplication bikeShopApplication = new BikeShopApplication(new Warehouse()); 
+BikeShopApplication bikeShopApplication = new BikeShopApplication(new Warehouse());
 ```
 
 But our `Warehouse` depends on several `Locker` objects - actually, it takes an array of them. And each `Locker` is initialised three integers, which describe its height, width and depth in centimetres:
@@ -36,7 +36,7 @@ There are a couple of really big problems here. Firstly and more superficially, 
 
 These two problems are what is meant by unreadable and fragile code.
 
-Spring solves these problems by taking control of the process of initialising and supplying class dependencies throughout your application. When writing an application with Spring, we simply declare what dependencies a class has (as fields, and constructor arguments). Most of the time, we can then allow Spring to do the rest; sometimes we may need to provide additional instructions, in the form of configuration. 
+Spring solves these problems by taking control of the process of initialising and supplying class dependencies throughout your application. When writing an application with Spring, we simply declare what dependencies a class has (as fields, and constructor arguments). Most of the time, we can then allow Spring to do the rest; sometimes we may need to provide additional instructions, in the form of configuration.
 
 ## Additional Resources
 Because Spring and Spring Boot are large, mature projects, you may benefit from using some supplementary resources to help you complete this section.
@@ -48,9 +48,9 @@ If you prefer to learn through video courses, [Dan Vega's Spring Boot udemy cour
 Finally, the [Spring Guides](https://spring.io/guides), maintained by the Spring team, are a very useful resource.
 
 ## Sections
-1. [./4-1-introduction-to-spring](Introduction to the Spring framework)
-2. [./4-2-configuration-profiles-testing](Configuration, Profiles and Testing)
-3. [./4-3-controllers-validation](Controllers and Validation)
+1. [Introduction to the Spring framework](./4-1-introduction-to-spring)
+2. [Configuration, Profiles and Testing](./4-2-configuration-profiles-testing)
+3. [Controllers and Validation](./4-3-controllers-validation)
 
 # Challenge: Food Standards API
 Using the [FSA food hygiene rating data API](http://ratings.food.gov.uk/open-data/en-GB), use Spring to produce a web application that implements the following user story:
