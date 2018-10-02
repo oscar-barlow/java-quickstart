@@ -106,7 +106,7 @@ Do some research and find out.
 
 ## Java's Data Structures
 
-Java has data structures that neither Ruby nor Javascript have, like `Set`s. Addtionally, many of these classes are abstract and can't or shouldn't be instantiated directly.
+Java has data structures that neither Ruby nor Javascript have, like `LinkedList`s. Addtionally, many of these classes are abstract and can't or shouldn't be instantiated directly.
 
 The subclasses of these structures (e.g. `HashMap`, `TreeSet`, `RoleList`) are too numerous to be worth the time to describe here. In general, it is probably better to learn about them in context - in the course of your job, when you need to use them. For the moment, simply be aware that they exist, and they are meaningfully different from each other. In fact...
 
